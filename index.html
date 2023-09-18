@@ -7,15 +7,22 @@
   <title>document</title>
   <style>
 		body{
-		background-color:cornsilk;
+    background-color:ghostwhite;
 		text-align: center;
 		}
+    #equations{
+    position: absolute;
+    left: 33%;
+    align-self: center;
+    width: 30%;
+    background-color:orange;
+    }
     div {
       font-size: 24px;
 			
     }
 		h2{
-		color:chocolate;
+		color:dodgerblue;
 		font-family: Arial, Helvetica, sans-serif;
 		}
     .correct {
@@ -30,61 +37,6 @@
 <body>
   <h2>Welcome to fun math!</h2>
   <div id="equations"></div>
-  <script>
-
-    const equations = [];
-
-    function generateEquation() {
-
-      let x, y;
-
-      x = Math.floor(Math.random() * 8) + 1; 
-      y = Math.floor(Math.random() * (9 - x - 1)) + 1; 
-
-      const equationText = `${x} + ${y} =  `;
-
-      const equationDiv = document.getElementById('equations');
-      const newEquation = document.createElement('div');
-      newEquation.style.padding = '5px';
-      newEquation.textContent = equationText;
-
-      // Create an input element to put the sum
-      const userInput = document.createElement('input');
-      userInput.type = 'text';
-			userInput.style.fontSize='24px';
-
-      // Create a  Checkbox
-      const correctness = document.createElement('span');
-
-      newEquation.appendChild(userInput);
-      newEquation.appendChild(correctness);
-
-      equationDiv.appendChild(newEquation);
-
-      equations.push({
-        equation: newEquation,
-        userInput,
-        correctness
-      });
-
-      // Add an event listener to check the answer when Enter is pressed
-      userInput.addEventListener("keypress", function(event) {
-        if (event.key === 'Enter') {
-          const userAnswer = userInput.value.trim();
-          const expectedAnswer = (x + y).toString();
-          if (userAnswer === expectedAnswer) {
-            correctness.textContent = '✔';
-            correctness.className = 'correct';
-              generateEquation();
-          } else {
-            correctness.textContent = '✘';
-            correctness.className = 'incorrect';
-          }
-        }
-      });
-    }
-    // Generate the initial equation
-    generateEquation();
-  </script>
+  <script src="./script.js"></script>
 </body>
 </html>
