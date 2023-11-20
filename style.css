@@ -1,0 +1,45 @@
+body {
+  background-color: ghostwhite;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  color: dodgerblue;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#equationTable {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+
+
+}
+tr,td,input,table{
+background-color: orange;
+  }
+.equation-cell {
+  text-align: center;
+  padding: 10px;
+}
+
+.equation {
+  font-size: 24px;
+  display: inline-block;
+}
+
+input[type="text"] {
+  font-size: 24px;
+  width: 60px; /* Adjust the width as needed */
+}
+
+.correct {
+  color: green;
+}
+
+.incorrect {
+  color: red;
+}
